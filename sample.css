@@ -189,24 +189,23 @@ h2{
 
 /* Checkbox to control the sidenav */
 #snav:checked ~ .sidenav {
-    width: 250px; /* Width of the sidenav when opened */
+    width: 250px; 
 }
 
 #snav {
-    display: none; /* Hide the checkbox */
+    display: none; 
 }
 
 /* Hide the burger menu when the sidebar is open */
 #snav:checked ~ #main .open {
-    display: none; /* Hide burger icon */
+    display: none; 
 }
 
 /* Show the close icon when the sidebar is open */
 #snav:checked ~ .sidenav .close {
-    display: block; /* Show close icon */
+    display: block; 
 }
 
-/* Initially hide the close icon */
 .sidenav .close {
     display: block; /* Hide close icon by default */
     color: aliceblue;
@@ -250,8 +249,8 @@ h2{
     padding: 15px;
     text-align: center;
     color: white;
-    width: 80%; /* Make each card full width of its grid column */
-    max-width: 250px; /* Optional: limit card width */
+    width: 80%; 
+    max-width: 250px; 
   }
   
   .product-card img {
@@ -308,14 +307,14 @@ h2{
     font-size: 18px;
     border-radius: 20px;
     cursor: pointer;
-  }/* Product Grid - 2 Rows and 3 Columns */
+  }
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
-  grid-template-rows: repeat(2, auto);   /* 2 rows with auto height */
-  gap: 10px;                             /* Spacing between cards */
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(2, auto);   
+  gap: 10px;                            
   width: 100%;
-  justify-items: center;                 /* Center content within each grid cell */
+  justify-items: center;                 
   margin-top: 10px;
 }
 
@@ -326,8 +325,8 @@ h2{
   padding: 15px;
   text-align: center;
   color: white;
-  width: 100%; /* Make each card take full width of its grid cell */
-  max-width: 200px; /* Optional: You can set a max width to limit card size */
+  width: 100%; 
+  max-width: 200px; 
 }
 
 /* Product Card Image */
@@ -401,7 +400,7 @@ h2{
     padding: 20px;
     color: #333;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: none; /* hidden by default, toggle with JS */
+    display: none; 
   }
   
   .cart-summary h2 {
