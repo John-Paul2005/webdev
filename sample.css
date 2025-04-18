@@ -1,0 +1,544 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0%;
+}
+
+
+h1{
+    color: orange; /** header **/
+    font-size: 50px;
+}
+
+/**background image - homepage **/
+#bar-bg{
+    background-image: url(images/barBG.png);
+    width: 100%;
+    height: 55%;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: 0;
+    
+}
+
+#Home h1, p{
+    margin: auto;
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100hv;
+    text-align: center;
+    z-index: 1;
+}
+#Home p{
+    color: white;
+    z-index: 1;
+}
+
+.shopnowBTN{
+    background-color: orange;
+    color: white;
+    border-radius: 17px;
+    border: 0px;
+    padding: 10px 25px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.shopnowBTN a{
+    text-decoration: none;
+
+}
+.shopnowBTN:hover{
+    background-color: white;
+    color: orange;
+}
+
+#Home{
+    background-color: rgb(70, 43, 4);
+    height: 600px;   
+}
+
+#Products{
+background-color: rgb(70, 43, 4);
+height: 600px;
+
+}
+
+#ShoppingCart{
+background-color: rgb(70, 43, 4);
+height: 600px;
+}
+
+#AboutUs{
+background-color: rgb(70, 43, 4);
+height: 600px;
+}
+
+
+#Contact{
+background-color: rgb(70, 43, 4);
+height: 585px;
+}
+
+#Footer{
+    background-color: #a66934;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    position: relative;
+    bottom: 242px;
+}
+h2{
+  color: white;
+  font-size: 20px;
+}
+
+.title{
+    text-align: center;
+    
+}
+
+
+/**MENU BUTTON**/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #a66934;
+    padding: 10px 25px;
+}
+
+.navbar .open {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 10px; 
+    left: 30px; 
+    z-index: 2; 
+}
+
+.navbar .login {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.login:hover{
+    background-color: white;
+    color: orange;
+    cursor: pointer;
+}
+
+.navbar .login a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+}
+
+.sidenav a {
+    padding: 20px 15px;
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: orange;
+}
+
+.sidenav .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Checkbox to control the sidenav */
+#snav:checked ~ .sidenav {
+    width: 250px; /* Width of the sidenav when opened */
+}
+
+#snav {
+    display: none; /* Hide the checkbox */
+}
+
+/* Hide the burger menu when the sidebar is open */
+#snav:checked ~ #main .open {
+    display: none; /* Hide burger icon */
+}
+
+/* Show the close icon when the sidebar is open */
+#snav:checked ~ .sidenav .close {
+    display: block; /* Show close icon */
+}
+
+/* Initially hide the close icon */
+.sidenav .close {
+    display: block; /* Hide close icon by default */
+    color: aliceblue;
+}
+
+  
+/* PRODUCTS SECTION */
+.arrow {
+    position: absolute;
+    top: 155%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    color: orange;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .left-arrow {
+    left: 20px;
+  }
+  
+  .right-arrow {
+    right: 20px;
+  }
+
+
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, auto);   
+    gap: 10px;
+    width: 100%;
+    justify-items: center; 
+    margin-top: 10px;
+  }
+  
+  .product-card {
+    background: orange;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    width: 80%; /* Make each card full width of its grid column */
+    max-width: 250px; /* Optional: limit card width */
+  }
+  
+  .product-card img {
+    width: 100px;
+    height: 90px;
+    margin-bottom: 5px;
+  }
+  
+  .product-card h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .price {
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quantity button {
+    background: white;
+    color: orange;
+    border: none;
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .quantity span {
+    color: white;
+    font-size: 16px;
+  }
+  
+  /* Add to Cart Button */
+  .add-cart {
+    display: block;
+    margin: 1px auto 0;
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+  }/* Product Grid - 2 Rows and 3 Columns */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  grid-template-rows: repeat(2, auto);   /* 2 rows with auto height */
+  gap: 10px;                             /* Spacing between cards */
+  width: 100%;
+  justify-items: center;                 /* Center content within each grid cell */
+  margin-top: 10px;
+}
+
+/* Product Card Styling */
+.product-card {
+  background: orange;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+  width: 100%; /* Make each card take full width of its grid cell */
+  max-width: 200px; /* Optional: You can set a max width to limit card size */
+}
+
+/* Product Card Image */
+.product-card img {
+  width: 100px;
+  height: 90px;
+  margin-bottom: 5px;
+}
+
+/* Product Card Title */
+.product-card h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Price Styling */
+.price {
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Quantity Section */
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Quantity Buttons */
+.quantity button {
+  background: white;
+  color: orange;
+  border: none;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Quantity Display */
+.quantity span {
+  color: white;
+  font-size: 16px;
+}
+
+/* Add to Cart Button */
+.add-cart {
+  display: block;
+  margin: 10px auto 0;
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+  
+  /* Cart Summary */
+  .cart-summary {
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: none; /* hidden by default, toggle with JS */
+  }
+  
+  .cart-summary h2 {
+    font-size: 22px;
+    color: orange;
+    margin-bottom: 15px;
+  }
+  
+  #cartItems {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #cartItems li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+
+  /* ABOUT US SECTION */
+
+  #AboutUs h3{
+color: white;
+font-size: 30px;
+  }
+
+  .about{
+padding: 20px 15px;
+background-color: orange;
+margin-top: 25px;
+width: 65%;
+margin-left: 30px;
+border-radius: 15px;
+  }
+
+  .mission, .vision{
+    padding: 20px 15px;
+    background-color: orange;
+    margin-top: 35px;
+    width: 30%;
+    margin-left: 30px;
+    border-radius: 15px;
+    display: inline-block;
+  }
+
+  .vision{
+    padding-bottom: 42px;
+  }
+
+  #AboutUs p{
+    color: white;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  .aboutIMG-1{
+background-image: url(images/IMG-about1.png);
+width: 25%;
+    height: 25%;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 913px;
+    bottom: 500px;
+    border-radius: 10px;
+  }
+ 
+  .aboutIMG-2{
+    background-image: url(images/IMG-about2.png);
+    width: 25%;
+    height: 65%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 913px;
+    bottom: 485px;
+    border-radius: 10px;
+  }
+
+
+  /*CONTACT SECTION*/
+  #Contact h3{
+    color: white;
+    font-size: 30px;
+      }
+
+      #Contact p{
+        color: white;
+        font-size: 25px;
+        margin-top: 20px;
+          }
+  
+  .contact-1, .contact-2{
+background-color: orange;
+width: 25%;
+padding: 25px 20px;
+margin-left: 40px;
+border-radius: 15px;
+
+  }
+
+  .contact-1, .address{
+    display: inline-block;
+margin-top: 20px;
+  }
+
+  .address{
+background-color: orange;
+width: 60%;
+margin-left: 20px;
+padding: 25px 25px;
+border-radius: 15px;
+position: relative;
+bottom: 95px;
+
+  }
+
+  .map{
+    background-image: url(images/occmap.png);
+    width: 64%;
+    height: 45%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+    left: 420px;
+    bottom: 260px;
+  }
+
+.delete, .go-shop{
+  display: inline-block;
+}
+
+.shop-cart-btn{
+  justify-content: space-between;
+}
+
