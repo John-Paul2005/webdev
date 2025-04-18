@@ -189,160 +189,85 @@ h2{
 
 /* Checkbox to control the sidenav */
 #snav:checked ~ .sidenav {
-    width: 250px; 
+    width: 250px; /* Width of the sidenav when opened */
 }
 
 #snav {
-    display: none; 
+    display: none; /* Hide the checkbox */
 }
 
 /* Hide the burger menu when the sidebar is open */
 #snav:checked ~ #main .open {
-    display: none; 
+    display: none; /* Hide burger icon */
 }
 
 /* Show the close icon when the sidebar is open */
 #snav:checked ~ .sidenav .close {
-    display: block; 
+    display: block; /* Show close icon */
 }
 
+/* Initially hide the close icon */
 .sidenav .close {
     display: block; /* Hide close icon by default */
     color: aliceblue;
 }
 
   
-/* PRODUCTS SECTION */
+/* Arrow styling for navigating products */
 .arrow {
-    position: absolute;
-    top: 155%;
-    transform: translateY(-50%);
-    font-size: 45px;
-    color: orange;
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  .left-arrow {
-    left: 20px;
-  }
-  
-  .right-arrow {
-    right: 20px;
-  }
+  position: absolute;
+  top: 155%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  color: orange;
+  cursor: pointer;
+  z-index: 1;
+}
 
+.left-arrow {
+  left: 20px;
+}
 
-  
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(2, auto);   
-    gap: 10px;
-    width: 100%;
-    justify-items: center; 
-    margin-top: 10px;
-  }
-  
-  .product-card {
-    background: orange;
-    border-radius: 20px;
-    padding: 15px;
-    text-align: center;
-    color: white;
-    width: 80%; 
-    max-width: 250px; 
-  }
-  
-  .product-card img {
-    width: 100px;
-    height: 90px;
-    margin-bottom: 5px;
-  }
-  
-  .product-card h2 {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
-  .price {
-    background: white;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .quantity button {
-    background: white;
-    color: orange;
-    border: none;
-    font-size: 18px;
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .quantity span {
-    color: white;
-    font-size: 16px;
-  }
-  
-  /* Add to Cart Button */
-  .add-cart {
-    display: block;
-    margin: 1px auto 0;
-    background-color: orange;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-size: 18px;
-    border-radius: 20px;
-    cursor: pointer;
-  }
+.right-arrow {
+  right: 20px;
+}
+
+/* Shared grid layout for Products and Cart */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  grid-template-rows: repeat(2, auto);   
-  gap: 10px;                            
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  grid-template-rows: repeat(2, auto);   /* 2 rows with auto height */
+  gap: 10px;
   width: 100%;
-  justify-items: center;                 
+  justify-items: center;
   margin-top: 10px;
 }
 
-/* Product Card Styling */
-.product-card {
+/* Product or Cart Item card styling */
+.product-card, .cart-item {
   background: orange;
   border-radius: 20px;
   padding: 15px;
   text-align: center;
   color: white;
-  width: 100%; 
-  max-width: 200px; 
+  width: 100%;
+  max-width: 250px; /* Optional: limit card width */
 }
 
-/* Product Card Image */
-.product-card img {
+/* Product Image */
+.product-card img, .cart-item img {
   width: 100px;
   height: 90px;
   margin-bottom: 5px;
 }
 
-/* Product Card Title */
-.product-card h2 {
+/* Title */
+.product-card h2, .cart-item h2 {
   font-size: 16px;
   margin-bottom: 5px;
 }
 
-/* Price Styling */
+/* Price styling */
 .price {
   background: white;
   color: black;
@@ -360,7 +285,6 @@ h2{
   gap: 10px;
 }
 
-/* Quantity Buttons */
 .quantity button {
   background: white;
   color: orange;
@@ -372,13 +296,12 @@ h2{
   cursor: pointer;
 }
 
-/* Quantity Display */
 .quantity span {
   color: white;
   font-size: 16px;
 }
 
-/* Add to Cart Button */
+/* Buttons */
 .add-cart {
   display: block;
   margin: 10px auto 0;
@@ -391,33 +314,28 @@ h2{
   cursor: pointer;
 }
 
-  
-  /* Cart Summary */
-  .cart-summary {
-    margin-top: 30px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    color: #333;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: none; 
-  }
-  
-  .cart-summary h2 {
-    font-size: 22px;
-    color: orange;
-    margin-bottom: 15px;
-  }
-  
-  #cartItems {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #cartItems li {
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-  }
+/* Delete All Button */
+.delete {
+  background-color: red;
+}
+
+/* Cart Item Styling */
+.cart-item .quantity {
+  margin-top: 10px;
+}
+
+.cart-item .remove-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+
+
 
 
   /* ABOUT US SECTION */
@@ -439,7 +357,6 @@ border-radius: 15px;
   .mission, .vision{
     padding: 20px 15px;
     background-color: orange;
-    margin-top: 35px;
     width: 30%;
     margin-left: 30px;
     border-radius: 15px;
@@ -448,6 +365,11 @@ border-radius: 15px;
 
   .vision{
     padding-bottom: 42px;
+    position: relative;
+    bottom: 0px;
+  }
+  .mission{
+    margin-top: 35px;
   }
 
   #AboutUs p{
@@ -465,7 +387,7 @@ width: 25%;
     background-repeat: no-repeat;
     position: relative;
     left: 913px;
-    bottom: 500px;
+    bottom: 530px;
     border-radius: 10px;
   }
  
@@ -478,7 +400,7 @@ width: 25%;
     background-repeat: no-repeat;
     position: relative;
     left: 913px;
-    bottom: 485px;
+    bottom: 510px;
     border-radius: 10px;
   }
 
@@ -498,10 +420,14 @@ width: 25%;
   .contact-1, .contact-2{
 background-color: orange;
 width: 25%;
-padding: 25px 20px;
+padding: 40px 20px;
 margin-left: 40px;
 border-radius: 15px;
 
+  }
+
+  .contact-2{
+    margin-top: 20px;
   }
 
   .contact-1, .address{
@@ -516,7 +442,7 @@ margin-left: 20px;
 padding: 25px 25px;
 border-radius: 15px;
 position: relative;
-bottom: 95px;
+bottom: 65px;
 
   }
 
@@ -541,3 +467,10 @@ bottom: 95px;
   justify-content: space-between;
 }
 
+.contact-1 i, .ctn{
+display: inline-block;
+}
+
+.contact-2 i, .ctn{
+  display: inline-block;
+}
